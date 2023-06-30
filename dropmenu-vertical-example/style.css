@@ -20,6 +20,7 @@ body {
 section {
     height: 100%;
     width: 350px;
+    user-select: none;
 }
 
 ul, li {
@@ -67,4 +68,8 @@ ul, li {
 
 .dropmenu-content a:hover {
     background-color: #444;
+}
+
+input[type="radio"] {
+    display: none;
 }
