@@ -32,8 +32,8 @@ function importEvent3() {
 }
 function importEvent4() {
     var loadScript = document.createElement("script");
-    loadScript.src = "scripts/Controllers/StickerController.js";
-    loadScript.name = "Sticker Controller";
+    loadScript.src = "scripts/Controllers/testControllers.js";
+    loadScript.name = "Test Controllers";
     logEventName(loadScript);
     addEventScript(loadScript);
 }
