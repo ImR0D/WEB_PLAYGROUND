@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/sticker.css">
+    <link rel="stylesheet" href="styles/modalElement.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/postIt.ico" type="image/x-icon">
+    <title>Sticker Post-It</title>
+</head>
+<body>
+    <div class="buttons">
+        <button id="addSticky">
+            <i class="fa fa-sticky-note" aria-hidden="true"></i>
+            <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+        </button>
+    </div>
+    <main>
+        <section id="main-sticker-container">
+            <!-- Sticker Container Layout -->
+            <!-- <div class="sticker-container" id="element-0">
+                <div class="buttons-container">
+                    <a id="clock-0">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    </a>
+                    <a id="options-0">
+                        <i class="fa fa-cog" aria-hidden="true"></i>
+                    </a>
+                    <a id="close-0">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="title-container">
+                    <label id="titleTag">Sticker 1</label>
+                </div>
+                <div class="text-container">
+                    <textarea id="textField"></textarea>
+                </div>
+            </div> -->
+            <!-- Modal 1: Input Container-->
+            <!-- <div class="modal-container">
+                <i id="modalCloseButton" class="fa fa-times modal-close-button"></i>
+                <div class="modal-content">
+                    <div class="modal-text-container">
+                        <label class="modal-label-element">Create new Sticker</label>
+                    </div>
+                    <div class="modal-option-container">
+                        <input id="input-title" type="text" placeholder="Input the Sticker Title">
+                        <input id="createPostIt" type="button" value="Create Sticker">
+                    </div>
+                </div>
+            </div> -->
+            <!-- Modal 2: Remove Element Container -->
+            <!-- <div class="modal-container">
+                <i id="modalCloseButton" class="fa fa-times modal-close-button"></i>
+                <div class="modal-content">
+                    <div class="modal-text-container">
+                        <label class="modal-label-element">Deseja realmente realizar essa ação?</label>
+                        <label class="modal-subtext red">Esta ação não poderá ser desfeita</label>
+                    </div>
+                    <div class="modal-option-container">
+                        <button id="cancelRemoveButton" class="cancel-remove">Cancel</button>
+                        <button id="acceptRemoveButton" class="accept-remove">Remove</button>
+                    </div>
+                </div>
+            </div> -->
+        </section>
+    </main>
+    <script src="scripts/Components/ElementContainer.js"></script>
+    <script src="scripts/Components/ModalContainer.js"></script>
+    <script src="scripts/Components/StickerContainer.js"></script>
+</body>
+</html>

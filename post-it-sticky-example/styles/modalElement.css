@@ -1,0 +1,134 @@
+
+.modal-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999999999999;
+    background-color: #555555A0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+}
+
+.modal-container .modal-close-button {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    z-index: 999999999999;
+    font-size: 48px;
+    padding: 25px;
+    cursor: pointer;
+    color: #1f1f1f;
+}
+
+.modal-container .modal-content {
+    width: 400px;
+    height: auto;
+    min-height: 200px;
+    background-color: aliceblue;
+    box-shadow: 0 0 1vw 0.05vw #444;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    padding: 25px;
+}
+
+.modal-container 
+.modal-content 
+.modal-text-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #A0C8C088;
+    text-align: center;
+    height: auto;
+    margin-bottom: 12px;
+}
+
+.modal-text-container .modal-label-element {
+    padding-top: 12px;
+    font-weight: 900;
+    font-size: large;
+    font-variant: small-caps;
+    color: #000;
+}
+
+.modal-text-container .modal-subtext {
+    font-weight: 600;
+    font-size: small;
+    background-color: #A0C8C0ff;
+    margin-top: 25px;
+    padding: 8px;
+    color: #444;
+}
+
+.modal-option-container {
+    display: flex;
+    padding-top: 20px;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    column-gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-option-container .cancel-remove,
+.modal-option-container .accept-remove {
+    padding: 12px;
+    border: none;
+    box-shadow: 0 0 6px 2px #555;
+    border-radius: 4px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.modal-option-container .cancel-remove:active,
+.modal-option-container .accept-remove:active {
+    transition: ease-in 0.04s;
+    box-shadow: 0 0 2px 0px #000;
+}
+
+.modal-option-container .cancel-remove {
+    background-color: tomato;
+}
+
+.modal-option-container .accept-remove {
+    background-color: yellowgreen;
+}
+
+.red {
+    color: #f00 !important;
+}
+
+#input-title, #createPostIt {
+    padding: 12px;
+    box-shadow: 0 0 6px 2px #AAA;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#createPostIt {
+    background-color: tomato;
+    color: #000;
+    margin-left: -20px;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+#input-title:focus, #createPostIt:focus {
+    box-shadow: 0px 0px 5px 1px yellowgreen;
+    outline: none;
+}
+
+#createPostIt:active {
+    box-shadow: 0 0 1px 0px #000;
+}

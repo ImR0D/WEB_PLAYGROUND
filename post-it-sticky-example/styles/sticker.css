@@ -1,0 +1,140 @@
+body {
+    margin: 0;
+    user-select: none;
+    pointer-events: visibleStroke;
+}
+
+.buttons {
+    width: auto;
+    padding: 25px;
+    background-color: chocolate;
+    margin-bottom: 15px;
+    padding-left: 25px;
+}
+.buttons button {
+    padding: 10px;
+    background-color: #00000080;
+    color: #fff;
+    border: none;
+    box-shadow: 2px 2px 5px 0px #555;
+    cursor: pointer;
+}
+.buttons button:hover {
+    background-color: #000000f0;
+}
+.buttons button:active {
+    transition: ease-in 0.07s;
+    box-shadow: 0px 0px 0px 0px #555;
+}
+
+.buttons i:first-child {
+    font-size: 42px;
+    color: #CCC;
+}
+.buttons i:last-child {
+    font-size: 20px;
+    position: relative;
+    top: -15px;
+    left: -22px;
+    color: #000;
+    z-index: 999999999999;
+    width: 0px;
+}
+
+
+/* ======================== STICKER STYLES ======================== */
+
+#main-sticker-container {
+    display: flex;
+    column-gap: 25px;
+    row-gap: 25px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    margin-left: 15px;
+}
+
+#main-sticker-container * {
+    box-sizing: border-box;
+}
+
+.sticker-container {
+    width: auto;
+    height: auto;
+    min-height: 250px;
+    min-width: 335px;
+    background-color: wheat;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.sticker-container .buttons-container {
+    float: right;
+    padding: 0;
+    background-color: transparent;
+}
+
+.sticker-container .buttons-container i {
+    padding: 8px;
+    font-size: 18px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+.sticker-container .buttons-container i:hover {
+    transition: 0.3s;
+    animation-timing-function: ease;
+    font-size: 22px;
+    background-color: #8888889f;
+    border-radius: 8px;
+}
+
+.sticker-container .title-container {
+    background-color: #ffffff99;
+    width: 100%;
+    min-height: 40px;
+    display: inline-block;
+}
+
+.text-container .title-container {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.title-container {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+}
+
+.sticker-container .text-container {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    max-height: 100%;
+    margin-top: 1px;
+    background-color: #ffffff99;
+}
+
+.sticker-container .text-container textarea {
+    width: inherit;
+    height: inherit;
+    min-height: 200px;
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 8px;
+}
