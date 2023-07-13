@@ -47,11 +47,9 @@ function deleteSticker(elementId) {
     addCloseModalButtonEvent();
 }
 
-
 addStickerButton.addEventListener("click", (e) => {
     addSticker()
 });
-
 
 function addCloseModalButtonEvent(){
     closeModal = modal.getModalCloseButton;
