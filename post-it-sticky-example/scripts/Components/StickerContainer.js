@@ -98,6 +98,9 @@ class Sticker extends Container {
         });
     }
 
+    get getParent() {
+        return this.getParentContainer
+    }
     get getStickerCounter() {
         return this.stickerCounter;
     }
