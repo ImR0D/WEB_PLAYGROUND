@@ -42,9 +42,9 @@ body {
 }
 
 
-/* ======================== STICKER STYLES ======================== */
+/* ======================== stickyNote STYLES ======================== */
 
-#main-sticker-container {
+#main-stickyNote-container {
     display: flex;
     column-gap: 25px;
     row-gap: 25px;
@@ -53,11 +53,11 @@ body {
     margin-left: 15px;
 }
 
-#main-sticker-container * {
+#main-stickyNote-container * {
     box-sizing: border-box;
 }
 
-.sticker-container {
+.stickyNote-container {
     width: auto;
     height: auto;
     min-height: 250px;
@@ -67,13 +67,13 @@ body {
     box-sizing: border-box;
 }
 
-.sticker-container .buttons-container {
+.stickyNote-container .buttons-container {
     float: right;
     padding: 0;
     background-color: transparent;
 }
 
-.sticker-container .buttons-container i {
+.stickyNote-container .buttons-container i {
     padding: 8px;
     font-size: 18px;
     width: auto;
@@ -82,7 +82,7 @@ body {
     text-align: center;
 }
 
-.sticker-container .buttons-container i:hover {
+.stickyNote-container .buttons-container i:hover {
     transition: 0.3s;
     animation-timing-function: ease;
     font-size: 22px;
@@ -90,7 +90,7 @@ body {
     border-radius: 8px;
 }
 
-.sticker-container .title-container {
+.stickyNote-container .title-container {
     background-color: #ffffff99;
     width: 100%;
     min-height: 40px;
@@ -117,7 +117,7 @@ body {
     text-align: center;
 }
 
-.sticker-container .text-container {
+.stickyNote-container .text-container {
     width: 100%;
     height: auto;
     min-height: 200px;
@@ -126,7 +126,7 @@ body {
     background-color: #ffffff99;
 }
 
-.sticker-container .text-container textarea {
+.stickyNote-container .text-container textarea {
     width: inherit;
     height: inherit;
     min-height: 200px;

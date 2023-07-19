@@ -45,18 +45,18 @@ class Container {
     /**
      * Set the parent container this will be passing to the constructor
      * If the param is not passing than the content parent will be as default
-     * the "main-sticker-container".
+     * the "main-stickyNote-container".
      * 
      * The main ".html" file may contain a 'section' with the parent id to turn the parent element
      * 
-     * The default is: <section id="main-sticker-container"></section>
+     * The default is: <section id="main-stickyNote-container"></section>
      * @param {*} parent 
      * @returns parent
      */
     #setParentContainer(parent) {
         var element = null;
         if (parent == "" || parent == undefined) {
-            parent = "main-sticker-container";
+            parent = "main-stickyNote-container";
             element = this.createElement("div", parent);
         } else {
             element = document.getElementById(parent);

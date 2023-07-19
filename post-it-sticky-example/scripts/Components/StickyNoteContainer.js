@@ -1,33 +1,33 @@
-class Sticker extends Container {
+class StickyNote extends Container {
     
     constructor(parent) {
         if (parent == null || parent == undefined || parent == "") {
-            super("main-sticker-container");
+            super("main-stickyNote-container");
         } else {
             super(parent);
         }
-        this.stickerCounter = 0;
-        this.stickerCounterLabeled = 1;
-        this.stickerContainer = new Map();
+        this.stickyNoteCounter = 0;
+        this.stickyNoteCounterLabeled = 1;
+        this.stickyNoteContainer = new Map();
         this.buttonsContainer = new Map();
         this.titleContainer = new Map();
         this.textContainer = new Map();
-        this.stickerTitle = "";
+        this.stickyNoteTitle = "";
     }
     
-    #updateStickerCounter() {
-        this.stickerCounter++;
-        this.stickerCounterLabeled++;
+    #updateStickyNoteCounter() {
+        this.stickyNoteCounter++;
+        this.stickyNoteCounterLabeled++;
     }
     
-    #addStickerBody() {
-        var elementName = "element-" + this.getStickerCounter;
-        let sticker = this.createElement("div", elementName, "sticker-container");
+    #addStickyNoteBody() {
+        var elementName = "element-" + this.getStickyNoteCounter;
+        let stickyNote = this.createElement("div", elementName, "stickyNote-container");
         let buttonContainer = this.createElement("div", "", "buttons-container");
 
-        let clockBtn = this.createElement("a", ("clock-" + this.getStickerCounter), "");
-        let optionBtn = this.createElement("a", ("options-" + this.getStickerCounter), "");
-        let closeBtn = this.createElement("a", ("close-" + this.getStickerCounter), "");
+        let clockBtn = this.createElement("a", ("clock-" + this.getStickyNoteCounter), "");
+        let optionBtn = this.createElement("a", ("options-" + this.getStickyNoteCounter), "");
+        let closeBtn = this.createElement("a", ("close-" + this.getStickyNoteCounter), "");
         
         let clockBtnImg = this.createElement("i", "", "fa fa-clock-o");
         let optionBtnImg = this.createElement("i", "", "fa fa-cog");
@@ -41,9 +41,9 @@ class Sticker extends Container {
         buttonContainer.appendChild(optionBtn);
         buttonContainer.appendChild(closeBtn);
 
-        this.appendChild(sticker, buttonContainer);
-        this.stickerContainer.set(elementName, sticker);
-        this.buttonsContainer.set(("bce-" + this.getStickerCounter), buttonContainer);
+        this.appendChild(stickyNote, buttonContainer);
+        this.stickyNoteContainer.set(elementName, stickyNote);
+        this.buttonsContainer.set(("bce-" + this.getStickyNoteCounter), buttonContainer);
         
     }
 
@@ -57,43 +57,43 @@ class Sticker extends Container {
         this.appendChild(container_title, titleTag);
         this.appendChild(container_text, textField);
 
-        this.titleContainer.set(("titleContainer-" + this.getStickerCounter), container_title);
-        this.textContainer.set(("textContainer-" + this.getStickerCounter), container_text);
+        this.titleContainer.set(("titleContainer-" + this.getStickyNoteCounter), container_title);
+        this.textContainer.set(("textContainer-" + this.getStickyNoteCounter), container_text);
 
-        var elementName = "element-" + this.getStickerCounter;
-        this.appendChild(this.getStickerContainer(elementName), container_title);
-        this.appendChild(this.getStickerContainer(elementName), container_text);
+        var elementName = "element-" + this.getStickyNoteCounter;
+        this.appendChild(this.getStickyNoteContainer(elementName), container_title);
+        this.appendChild(this.getStickyNoteContainer(elementName), container_text);
     }
 
-    createSticker(title) {
+    createStickyNote(title) {
         if (title == undefined || title == "") {
-            this.setTitle = ("Sticker " + this.stickerCounterLabeled);
+            this.setTitle = ("Sticky Note " + this.stickyNoteCounterLabeled);
         } else {
             this.setTitle = title;
         }
-        this.#addStickerBody();
+        this.#addStickyNoteBody();
         this.#addContentBody();
 
-        this.stickerContainer.forEach(e => {
+        this.stickyNoteContainer.forEach(e => {
             this.appendChild(this.getParentContainer, e);
         });
         
-        this.#updateStickerCounter();
+        this.#updateStickyNoteCounter();
     }
 
-    removeSticker(stickerId) {
-        this.stickerContainer.forEach((k,v) => {
+    removeStickyNote(stickyNoteId) {
+        this.stickyNoteContainer.forEach((k,v) => {
             var index = k.id.slice(k.id.length - 1);
-            if (k.id == stickerId) {
-                this.stickerContainer.get(v).remove();
-                this.stickerContainer.delete(k.id);
+            if (k.id == stickyNoteId) {
+                this.stickyNoteContainer.get(v).remove();
+                this.stickyNoteContainer.delete(k.id);
                 this.buttonsContainer.get(("bce-" + index)).remove();
                 this.buttonsContainer.delete(("bce-" + index));
                 this.titleContainer.get(("titleContainer-" + index)).remove();
                 this.titleContainer.delete(("titleContainer-" + index));
                 this.textContainer.get(("textContainer-" + index)).remove();
                 this.textContainer.delete(("textContainer-" + index));
-                this.stickerCounter--;
+                this.stickyNoteCounter--;
             }
         });
     }
@@ -101,14 +101,14 @@ class Sticker extends Container {
     get getParent() {
         return this.getParentContainer
     }
-    get getStickerCounter() {
-        return this.stickerCounter;
+    get getStickyNoteCounter() {
+        return this.stickyNoteCounter;
     }
-    get getStickerContainer() {
-        return this.stickerContainer;
+    get getStickyNoteContainer() {
+        return this.stickyNoteContainer;
     }
-    getStickerContainer(key) {
-        return this.stickerContainer.get(key);
+    getStickyNoteContainer(key) {
+        return this.stickyNoteContainer.get(key);
     }
     get getButtonsContainer() {
         return this.buttonsContainer;
@@ -129,9 +129,9 @@ class Sticker extends Container {
         return this.textContainer.get(key);
     }
     get getTitle() {
-        return this.stickerTitle;
+        return this.stickyNoteTitle;
     }
     set setTitle(title) {
-        this.stickerTitle = title;
+        this.stickyNoteTitle = title;
     }
 }

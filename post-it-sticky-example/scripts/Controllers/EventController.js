@@ -1,39 +1,39 @@
-// Test Phase
+// Test
 
 class Controller {
 
     constructor(parent) {
-        this.sticker = new Sticker(parent);
+        this.stickyNote = new StickyNote(parent);
         this.modal = new Modal(parent);
     }
 
-    openModalAddSticker() {
+    openModalAddstickyNote() {
         this.modal.openModal(1);
     }
-    openModalRemoveSticker() {
+    openModalRemovestickyNote() {
         this.modal.openModal(2);
     }
     closeModalScreen() {
         this.modal.closeModal();
     }
 
-    addSticker() {
-        this.openModalAddSticker();
+    addStickyNote() {
+        this.openModalAddstickyNote();
         titleText = this.modal.getModalOptionContainer.firstChild;
         addButton = this.modal.getModalOptionContainer.lastChild;
         addButton.addEventListener(
             "click",
             () => {
-                let removeStickerButton = null;
+                let removestickyNoteButton = null;
                 let cid = 0;
-                let stickerSize = 0;
-                this.sticker.createSticker(titleText.value);
-                this.sticker.buttonsContainer.forEach(e => {
-                    removeStickerButton = e.lastChild;
-                    cid = removeStickerButton.id.slice((e.id.length - 1));
-                    stickerSize = (this.sticker.stickerContainer.size - 1);
-                    if (cid == stickerSize) {
-                        addEventButtonDeleteSticker(removeStickerButton);
+                let stickyNoteSize = 0;
+                this.stickyNote.createstickyNote(titleText.value);
+                this.stickyNote.buttonsContainer.forEach(e => {
+                    removestickyNoteButton = e.lastChild;
+                    cid = removestickyNoteButton.id.slice((e.id.length - 1));
+                    stickyNoteSize = (this.stickyNote.stickyNoteContainer.size - 1);
+                    if (cid == stickyNoteSize) {
+                        addEventButtondeleteStickyNote(removestickyNoteButton);
                     }
                 });
                 this.closeModalScreen();
@@ -41,7 +41,7 @@ class Controller {
         );
     }
     
-    deleteSticker(elementId) {
+    deleteStickyNote(elementId) {
         openModalRemove();
         btnCancel = modal.getModalOptionContainer.firstChild;
         btnRemove = modal.getModalOptionContainer.lastChild;
@@ -49,7 +49,7 @@ class Controller {
             closeModalScreen();
         })
         btnRemove.addEventListener("click", () => {
-            sticker.removeSticker(elementId);
+            stickyNote.removestickyNote(elementId);
             closeModalScreen();
         });
         addCloseModalButtonEvent();
@@ -62,17 +62,17 @@ class Controller {
         };
     }
     
-    addEventButtonDeleteSticker(button) {
+    addEventButtondeleteStickyNote(button) {
         if (button == null || button == undefined) {
             this.closeModalScreen();
             throw new Error("Cannot find button element");
         }
-        this.sticker.stickerContainer.forEach(e => {
+        this.stickyNote.stickyNoteContainer.forEach(e => {
             cid = e.id.slice((e.id.length - 1));
-            stickerSize = (this.sticker.stickerContainer.size - 1);
-            if (cid == stickerSize) {
+            stickyNoteSize = (this.stickyNote.stickyNoteContainer.size - 1);
+            if (cid == stickyNoteSize) {
                 button.addEventListener("click", function() {
-                    this.deleteSticker(e.id);
+                    this.deleteStickyNote(e.id);
                 })
             }
         });
@@ -81,10 +81,10 @@ class Controller {
 
 // ==================================================================================================================================
 
-const addStickerButton = document.getElementById("addSticker");
-const sticker = new Sticker();
+const addStickyNoteButton = document.getElementById("addStickyNote");
+const stickyNote = new StickyNote();
 const modal = new Modal();
-let dataStickers = new Map();
+let dataStickyNotes = new Array();
 
 function openModalInput() {
     modal.openModal(1);
@@ -98,18 +98,18 @@ function closeModalScreen() {
     modal.closeModal();
 }
 
-function addSticker() {
+function addStickyNote() {
     openModalInput();
     input = modal.getModalOptionContainer.firstChild;
     btn = modal.getModalOptionContainer.lastChild;
     btn.onclick = function() {
         button = null;
-        sticker.createSticker(input.value);
-        sticker.buttonsContainer.forEach(e => {
+        stickyNote.createStickyNote(input.value);
+        stickyNote.buttonsContainer.forEach(e => {
             button = e.lastChild;
             cid = button.id.slice((e.id.length - 1));
-            if (cid == (sticker.stickerContainer.size - 1)) {
-                addEventButtonDeleteSticker(button);
+            if (cid == (stickyNote.stickyNoteContainer.size - 1)) {
+                addEventButtondeleteStickyNote(button);
             }
         });
         closeModalScreen();
@@ -117,7 +117,7 @@ function addSticker() {
     addCloseModalButtonEvent();
 }
 
-function deleteSticker(elementId) {
+function deleteStickyNote(elementId) {
     openModalRemove();
     btnCancel = modal.getModalOptionContainer.firstChild;
     btnRemove = modal.getModalOptionContainer.lastChild;
@@ -125,14 +125,14 @@ function deleteSticker(elementId) {
         closeModalScreen();
     })
     btnRemove.addEventListener("click", () => {
-        sticker.removeSticker(elementId);
+        stickyNote.removeStickyNote(elementId);
         closeModalScreen();
     });
     addCloseModalButtonEvent();
 }
 
-addStickerButton.addEventListener("click", (e) => {
-    addSticker()
+addStickyNoteButton.addEventListener("click", (e) => {
+    addStickyNote()
 });
 
 function addCloseModalButtonEvent(){
@@ -142,42 +142,32 @@ function addCloseModalButtonEvent(){
     };
 }
 
-function addEventButtonDeleteSticker(button) {
+function addEventButtondeleteStickyNote(button) {
     if (button == null || button == undefined) {
         closeModalScreen();
         throw new Error("Cannot find button element");
     }
-    sticker.stickerContainer.forEach(e => {
+    stickyNote.stickyNoteContainer.forEach(e => {
         cid = e.id.slice((e.id.length - 1));
-        if (cid == (sticker.stickerContainer.size - 1)) {
+        if (cid == (stickyNote.stickyNoteContainer.size - 1)) {
             button.addEventListener("click", function() {
-                deleteSticker(e.id);
+                deleteStickyNote(e.id);
             })
         }
     });
 }
 
-function PersistData() {
-
-    sticker.stickerContainer.forEach(e => {
-        dataStickers.set(e.id, e)
+// TEST
+function persistData() {
+    stickyNote.stickyNoteContainer.forEach(e => {
+        title = e.querySelector("#titleTag");
+        text = e.querySelector("#textField");
+        console.log(title.innerHTML)
+        console.log(text.value)
     });
-
-    dataStickers.forEach(e => {
-        teste = JSON.stringify(e)
-        console.log(e)
-        console.log(teste)
-    })
-    
-    localStorage.setItem('StickerMap', dataStickers)
 }
 
 function LoadData() {
-    parent = sticker.getParent;
-    if (localStorage.hasOwnProperty("Stickers")) {
-        parent.appendChild(localStorageData.forEach(e => {
-            console.log(e)
-        }))
-    }
-    console.log(localStorage)
+    parent = stickyNote.getParent;
+
 }

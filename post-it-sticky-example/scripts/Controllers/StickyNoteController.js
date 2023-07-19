@@ -1,4 +1,4 @@
-class StickerController extends Sticker {
+class StickerController extends StickyNote {
 
     /**
      * @param {HTMLElement} parent 
@@ -9,7 +9,7 @@ class StickerController extends Sticker {
 
     }
     get getSticker() {
-        return this.parent.getStickerContainer;
+        return this.parent.getStickyNoteContainer;
     }
 
 }

@@ -2,7 +2,7 @@ class Modal extends Container {
 
     constructor(parent) {
         if (parent == null || parent == undefined || parent == "") {
-            super("main-sticker-container");
+            super("main-stickyNote-container");
         } else {
             super(parent);
         }
@@ -36,7 +36,7 @@ class Modal extends Container {
 
     /**
      * @argument 1: Will create the modal to input element;
-     * @argument 2: Will create the modal to sticker remove element
+     * @argument 2: Will create the modal to stickyNote remove element
      * @param {number} type 
      */
 
@@ -89,13 +89,13 @@ class Modal extends Container {
         this.#addContentBody();
 
         var labelElement = this.createElement("label", "", "modal-label-element");
-        this.#setInnerValue(labelElement, "Create new Sticker");
+        this.#setInnerValue(labelElement, "Create new Sticky Note");
         var inputElement = this.createElement("input", "input-title")
             inputElement.type = "text";
-            inputElement.placeholder = "Input the Sticker Title";
+            inputElement.placeholder = "Input the sticker title";
         var createElementButton = this.createElement("input", "createPostIt")
             createElementButton.type = "button";
-            createElementButton.value = "Create Sticker";
+            createElementButton.value = "Create Sticky";
         
         this.appendChild(this.textContainer, labelElement);
         this.appendChild(this.optionContainer, inputElement);
@@ -114,8 +114,8 @@ class Modal extends Container {
         var cancelActionButton = this.createElement("button", "cancelRemoveButton", "cancel-remove");
         var acceptActionButton = this.createElement("button", "acceptRemoveButton", "accept-remove");
 
-        this.#setInnerValue(labelElement, "Deseja realmente realizar essa ação?");
-        this.#setInnerValue(subTextElement, "Esta ação não poderá ser desfeita");
+        this.#setInnerValue(labelElement, "Do you really want to perform this action?");
+        this.#setInnerValue(subTextElement, "The following action cannot be done!");
         this.#setInnerValue(cancelActionButton, "Cancel");
         this.#setInnerValue(acceptActionButton, "Remove");
 

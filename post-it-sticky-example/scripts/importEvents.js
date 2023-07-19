@@ -25,8 +25,8 @@ function importEvent2() {
 }
 function importEvent3() {
     var loadScript = document.createElement("script");
-    loadScript.src = "scripts/Components/StickerContainer.js";
-    loadScript.name = "Sticker Component";
+    loadScript.src = "scripts/Components/StickyNoteContainer.js";
+    loadScript.name = "Sticky Note Component";
     logEventName(loadScript);
     addEventScript(loadScript);
 }
@@ -46,8 +46,8 @@ function importEvent5() {
 }
 function importEvent6() {
     var loadScript = document.createElement("script");
-    loadScript.src = "scripts/Controllers/StickerController.js";
-    loadScript.name = "Test Controller - Sticker";
+    loadScript.src = "scripts/Controllers/StickyNoteController.js";
+    loadScript.name = "Test Controller - Sticky Note";
     logEventName(loadScript);
     addEventScript(loadScript);
 }
