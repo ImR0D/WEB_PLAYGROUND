@@ -124,8 +124,10 @@ function deleteStickyNote(elementId) {
     btnCancel.addEventListener("click", () => {
         closeModalScreen();
     })
+    var key = document.querySelector("#" + elementId).querySelector("#titleTag").innerText
     btnRemove.addEventListener("click", () => {
         stickyNote.removeStickyNote(elementId);
+        removeStoredData(key)
         closeModalScreen();
     });
     addCloseModalButtonEvent();
@@ -179,6 +181,19 @@ function stickyNoteStoreData() {
         localStorage.setItem(mapIterKeys.next().value, mapIterValues.next().value)
     }
     
+}
+
+function removeStoredData(key) {
+    stickyNoteData.delete(key)
+    localStorage.removeItem(key)
+}
+
+function loadStoredData() {
+    let data = localStorage
+    for (i = 1; i < localStorage.length; i++) {
+        // obter o título [localStorage.key(i)]
+        // obter o valor [localStorage.getItem(data.key(i))]
+    }
 }
 
 setInterval(stickyNoteStoreData, 100)
