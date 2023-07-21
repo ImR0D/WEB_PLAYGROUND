@@ -37,20 +37,6 @@ function importEvent4() {
     logEventName(loadScript);
     addEventScript(loadScript);
 }
-function importEvent5() {
-    var loadScript = document.createElement("script");
-    loadScript.src = "scripts/Controllers/ModalController.js";
-    loadScript.name = "Test Controller - Modal";
-    logEventName(loadScript);
-    addEventScript(loadScript);
-}
-function importEvent6() {
-    var loadScript = document.createElement("script");
-    loadScript.src = "scripts/Controllers/StickyNoteController.js";
-    loadScript.name = "Test Controller - Sticky Note";
-    logEventName(loadScript);
-    addEventScript(loadScript);
-}
 
 
 // Load Events
@@ -58,5 +44,3 @@ importEvent1();
 importEvent2();
 importEvent3();
 importEvent4();
-importEvent5();
-importEvent6();

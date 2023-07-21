@@ -33,7 +33,7 @@ class Controller {
                     cid = removestickyNoteButton.id.slice((e.id.length - 1));
                     stickyNoteSize = (this.stickyNote.stickyNoteContainer.size - 1);
                     if (cid == stickyNoteSize) {
-                        addEventButtondeleteStickyNote(removestickyNoteButton);
+                        addEventButtonDeleteStickyNote(removestickyNoteButton);
                     }
                 });
                 this.closeModalScreen();
@@ -62,7 +62,7 @@ class Controller {
         };
     }
     
-    addEventButtondeleteStickyNote(button) {
+    addEventButtonDeleteStickyNote(button) {
         if (button == null || button == undefined) {
             this.closeModalScreen();
             throw new Error("Cannot find button element");
@@ -84,7 +84,7 @@ class Controller {
 const addStickyNoteButton = document.getElementById("addStickyNote");
 const stickyNote = new StickyNote();
 const modal = new Modal();
-let dataStickyNotes = new Array();
+let stickyNoteData = new Map();
 
 function openModalInput() {
     modal.openModal(1);
@@ -109,7 +109,7 @@ function addStickyNote() {
             button = e.lastChild;
             cid = button.id.slice((e.id.length - 1));
             if (cid == (stickyNote.stickyNoteContainer.size - 1)) {
-                addEventButtondeleteStickyNote(button);
+                addEventButtonDeleteStickyNote(button);
             }
         });
         closeModalScreen();
@@ -142,7 +142,7 @@ function addCloseModalButtonEvent(){
     };
 }
 
-function addEventButtondeleteStickyNote(button) {
+function addEventButtonDeleteStickyNote(button) {
     if (button == null || button == undefined) {
         closeModalScreen();
         throw new Error("Cannot find button element");
@@ -157,17 +157,28 @@ function addEventButtondeleteStickyNote(button) {
     });
 }
 
-// TEST
-function persistData() {
-    stickyNote.stickyNoteContainer.forEach(e => {
-        title = e.querySelector("#titleTag");
-        text = e.querySelector("#textField");
-        console.log(title.innerHTML)
-        console.log(text.value)
-    });
+function stickyNoteStoreData() {
+    
+    data_title = new Array()
+    data_text = new Array()
+
+    stickyNote.getTitleContainer.forEach(title => {
+        data_title.push(title.querySelector("#titleTag").innerText)
+    })
+    stickyNote.getTextContainer.forEach(text => {
+        data_text.push(text.querySelector("#textField").value)
+    })
+    
+    for (i = 0; i < data_title.length; i++) {
+        stickyNoteData.set(data_title[i], data_text[i])
+    }
+    let mapIterKeys = stickyNoteData.keys()
+    let mapIterValues = stickyNoteData.values()
+    
+    for (i = 0; i < stickyNoteData.size; i++) {
+        localStorage.setItem(mapIterKeys.next().value, mapIterValues.next().value)
+    }
+    
 }
 
-function LoadData() {
-    parent = stickyNote.getParent;
-
-}
+setInterval(stickyNoteStoreData, 100)
