@@ -72,17 +72,48 @@
                         <label class="modal-label-element">Schedule Notification</label>
                         <label class="modal-subtext">
                             <p>
-                                The data is optional<br/>
                                 <i class="red">You can define only the time you want to be scheduled</i><br>
-                                And then press the 'Schedule' button
+                                <b>You can also set the period you want to repeat the notification</b>
                             </p>
                         </label>
                     </div>
                     <div class="modal-schedule-container">
-                        <input type="date" name="schedule-date" id="schedule-date">
+                        <label class="schedule-title">Set the time to be scheduled:</label>
                         <input type="time" name="schedule-time" id="schedule-time">
+                    </div>
+                    <div class="modal-schedule-container">
+                        <label class="schedule-title">Repeat Period:</label>
+                        <input type="datetime-local" name="repeatTimePeriod" id="repeatTimePeriod">
+                        <input id="schEventButton" class="schedule-event-btn" type="button" value="Add Event">
+                        <div class="schedule-event-table">
+                            <div class="schedule-event-options">
+                                <!-- Obter o valor da data e hora -->
+                                <!-- document.querySelector("#repeatTimePeriod").value.split("T") -->
+                                <div class="optionBox">
+                                    <option value="0">12/09/2023 17:32</option>
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                                <div class="optionBox">
+                                    <option value="1">22/11/2023 16:15</option>
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                                <div class="optionBox">
+                                    <option value="2">04/01/2024 12:48</option>
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                                <div class="optionBox">
+                                    <option value="3">30/07/2024 08:50</option>
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                                <div class="optionBox">
+                                    <option value="4">02/08/2024 18:50</option>
+                                    <i class="fa fa-trash"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-schedule-container">
                         <input type="button" id="scheduleNotificationButton" value="Schedule">
-                        <input type="button" id="scheduleClear" value="Clear">
                     </div>
                 </div>
             </div>
